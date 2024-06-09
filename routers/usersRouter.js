@@ -1,16 +1,7 @@
-const { saveUser, updateUser, getOneUser, saveProviderUser, getDashboardData } = require("../controllers/usersController")
-const verifyUser = require("../middlewares/verifyUsers")
+const { getAllUsers } = require("../controllers/usersController")
 
 const usersRouter = require("express").Router()
 
-usersRouter.post("/", saveUser)
-
-usersRouter.post("/provider", saveProviderUser)
-
-usersRouter.get("/:email/dashboard", verifyUser, getDashboardData)
-
-usersRouter.get("/:email", verifyUser, getOneUser)
-
-usersRouter.patch("/:email", verifyUser, updateUser)
+usersRouter.get("/", getAllUsers)
 
 module.exports = usersRouter

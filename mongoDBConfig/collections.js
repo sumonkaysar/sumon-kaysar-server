@@ -5,3 +5,4 @@ const usersCollection = DB.collection("users")
 
 module.exports = {
     usersCollection,
+}
